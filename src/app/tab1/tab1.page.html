@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="danger">
     <ion-title>
       Dados Recentes
     </ion-title>
@@ -8,26 +8,26 @@
 
 <ion-content [fullscreen]="true">
 
-  <!-- <ion-card-content>
-    <canvas #barChart></canvas>
-  </ion-card-content> -->
-
-
   <ion-card class="ion-text-center">
+    <img src="assets/imagens/logocovid.jpg">
     <ion-card-header>
-      <ion-card-title color="primary">Informaçōes Sobre a Pandemia no Brasil</ion-card-title>
+      <ion-card-title color="danger">Informaçōes Sobre a Pandemia no Brasil</ion-card-title>
       <ion-card-subtitle>Ultima Atualização: <b>{{dadosCovid.dataAtualizacao | date: 'dd/MM/yyy HH:mm'}}</b>
       </ion-card-subtitle>
       <ion-card-subtitle>Origem dos Dados: <b>{{dadosCovid.origem}}</b></ion-card-subtitle>
     </ion-card-header>
   </ion-card>
 
+  <ion-card-content>
+    <canvas #barChart></canvas>
+  </ion-card-content>
+
 
   <ion-grid>
     <ion-row>
       <ion-col>
         <ion-card class="ion-text-center">
-          <ion-card-header color="primary">
+          <ion-card-header color="danger">
             <ion-card-title>Total de Infectados</ion-card-title>
           </ion-card-header>
           <ion-card-content>
@@ -40,7 +40,7 @@
 
       <ion-col>
         <ion-card class="ion-text-center">
-          <ion-card-header color="primary">
+          <ion-card-header color="danger">
             <ion-card-title>Total de Falecidos</ion-card-title>
           </ion-card-header>
           <ion-card-content>
@@ -61,72 +61,32 @@
 
       <ion-col>
         <ion-card class="ion-text-center">
-        <ion-list>
-          <ion-list-header color="primary">
-            Infectados por Estados
-          </ion-list-header>
-          <ion-item *ngFor="let item of dadosCovid.infectadoRegiao">
-            <ion-label>{{item.uf}}</ion-label>
-            <ion-note slot="end" color="danger" style="font-size: initial;">{{item.contador}}</ion-note>
-          </ion-item>
-        </ion-list>
+          <ion-list>
+            <ion-list-header color="danger">
+              Infectados por Estados
+            </ion-list-header>
+            <ion-item *ngFor="let item of dadosCovid.infectadoRegiao">
+              <ion-label>{{item.uf}}</ion-label>
+              <ion-note slot="end" color="danger" style="font-size: initial;">{{item.contador}}</ion-note>
+            </ion-item>
+          </ion-list>
         </ion-card>
       </ion-col>
 
       <ion-col>
         <ion-card class="ion-text-center">
-        <ion-list>
-          <ion-list-header color="primary">
-            Falecidos por Estados
-          </ion-list-header>
-          <ion-item *ngFor="let item of dadosCovid.falecidoRegiao">
-            <ion-label>{{item.uf}}</ion-label>
-            <ion-note slot="end" color="danger" style="font-size: initial;">{{item.contador}}</ion-note>
-          </ion-item>
-        </ion-list>
+          <ion-list>
+            <ion-list-header color="danger">
+              Falecidos por Estados
+            </ion-list-header>
+            <ion-item *ngFor="let item of dadosCovid.falecidoRegiao">
+              <ion-label>{{item.uf}}</ion-label>
+              <ion-note slot="end" color="danger" style="font-size: initial;">{{item.contador}}</ion-note>
+            </ion-item>
+          </ion-list>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-
-
-  <!-- <ion-card>
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>ion-item in a card, icon left, button right</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
-    </ion-item>
-
-    <ion-card-content>
-      This is content, without any paragraph or header tags,
-      within an ion-card-content element.
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-item href="#" class="ion-activated">
-      <ion-icon name="wifi" slot="start"></ion-icon>
-      <ion-label>Card Link Item 1 activated</ion-label>
-    </ion-item>
-
-    <ion-item href="#">
-      <ion-icon name="wine" slot="start"></ion-icon>
-      <ion-label>Card Link Item 2</ion-label>
-    </ion-item>
-
-    <ion-item class="ion-activated">
-      <ion-icon name="warning" slot="start"></ion-icon>
-      <ion-label>Card Button Item 1 activated</ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>Card Button Item 2</ion-label>
-    </ion-item>
-  </ion-card> -->
-
-
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
